@@ -8,5 +8,8 @@ on:
 
 jobs:
   call-auto-assign:
+    permissions:
+      issues: write
+      pull-requests: write
     uses: github-brenno-compass/.github/.github/workflows/auto-assign.yml@main
     secrets: inherit
