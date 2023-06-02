@@ -1,0 +1,4 @@
+auto-assign:
+    uses: github-brenno-compass/.github/.github/workflows/auto-assign.yml@main
+    secrets:
+        GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}

@@ -1,0 +1,2 @@
+auto-assign:
+    uses: github-brenno-compass/.github/.github/workflows/swiftlint.yml@main
