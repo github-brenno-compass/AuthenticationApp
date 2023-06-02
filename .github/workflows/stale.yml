@@ -1,4 +1,10 @@
-auto-assign:
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: '44 4 * * *'
+
+mark-stale:
     uses: github-brenno-compass/.github/.github/workflows/stale.yml@main
     secrets:
         GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}

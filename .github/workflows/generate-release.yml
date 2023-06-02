@@ -1,4 +1,11 @@
-auto-assign:
+name: Generate Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+generate-release:
     uses: github-brenno-compass/.github/.github/workflows/generate-release.yml@main
     secrets:
         GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}
