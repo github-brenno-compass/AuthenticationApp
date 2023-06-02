@@ -8,5 +8,5 @@ on:
 
 jobs:
   call-auto-assign:
-    uses: github-brenno-compass/.github/.github/workflows/auto-assign.yml@reusable-workflow
+    uses: github-brenno-compass/.github/.github/workflows/auto-assign.yml@main
     secrets: inherit

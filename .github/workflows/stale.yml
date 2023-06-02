@@ -7,9 +7,9 @@ name: Mark stale issues and pull requests
 
 on:
   schedule:
-  - cron: '44 4 * * *'
+    - cron: '44 4 * * *'
 
 jobs:
   call-mark-stale:
-    uses: github-brenno-compass/.github/.github/workflows/stale.yml@reusable-workflow
+    uses: github-brenno-compass/.github/.github/workflows/stale.yml@main
     secrets: inherit

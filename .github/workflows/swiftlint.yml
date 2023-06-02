@@ -9,4 +9,4 @@ on:
 
 jobs:
   call-swiftlint:
-    uses: github-brenno-compass/.github/.github/workflows/swiftlint.yml@reusable-workflow
+    uses: github-brenno-compass/.github/.github/workflows/swiftlint.yml@main
