@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
 
-generate-release:
-    uses: github-brenno-compass/.github/.github/workflows/generate-release.yml@main
-    secrets:
-        GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}
+jobs:
+  call-generate-release:
+    uses: github-brenno-compass/.github/.github/workflows/generate-release.yml@reusable-workflow
+    secrets: inherit

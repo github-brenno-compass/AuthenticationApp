@@ -6,6 +6,7 @@ on:
       - '.swiftlint.yml'
       - 'Sources/**'
       - 'Tests/**'
-      
-swiftlint:
-    uses: github-brenno-compass/.github/.github/workflows/swiftlint.yml@main
+
+jobs:
+  call-swiftlint:
+    uses: github-brenno-compass/.github/.github/workflows/swiftlint.yml@reusable-workflow

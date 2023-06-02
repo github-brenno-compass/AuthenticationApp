@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened]
 
-auto-assign:
-    uses: github-brenno-compass/.github/.github/workflows/auto-assign.yml@main
-    secrets:
-        GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}
+jobs:
+  call-auto-assign:
+    uses: github-brenno-compass/.github/.github/workflows/auto-assign.yml@reusable-workflow
+    secrets: inherit
