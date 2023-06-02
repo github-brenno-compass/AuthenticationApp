@@ -11,5 +11,8 @@ on:
 
 jobs:
   call-mark-stale:
+    permissions:
+      issues: write
+      pull-requests: write
     uses: github-brenno-compass/.github/.github/workflows/stale.yml@main
     secrets: inherit
