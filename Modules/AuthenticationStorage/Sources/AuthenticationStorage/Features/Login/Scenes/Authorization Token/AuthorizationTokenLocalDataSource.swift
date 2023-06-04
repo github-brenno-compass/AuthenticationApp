@@ -27,4 +27,3 @@ public struct AuthorizationTokenLocalDataSource: AuthenticationAppData.Authoriza
         try SimpleKeychain.main.set(token, forKey: key)
     }
 }
-

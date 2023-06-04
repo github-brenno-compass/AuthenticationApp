@@ -54,6 +54,6 @@ let package = Package(
         .testTarget(
             name: "AuthenticationStorageTests",
             dependencies: ["AuthenticationStorage"]
-        ),
+        )
     ]
 )
