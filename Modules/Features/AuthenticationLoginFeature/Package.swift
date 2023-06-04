@@ -29,22 +29,31 @@ let package = Package(
         .package(
             url: "https://github.com/github-brenno-compass/GithubKit.git",
             branch: "main"
-        )
+        ),
+        .package(
+            url: "https://github.com/github-brenno-compass/GithubUI.git",
+            branch: "main"
+        ),
+        .package(path: "../../AuthenticationDomain"),
+        .package(path: "../../AuthenticationScenes")
     ],
     targets: [
         .target(
-            name: "AuthenticationApp",
+            name: "AuthenticationLoginFeature",
             dependencies: [
                 .product(name: "NavigationKit", package: "navigation-kit"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 "Factory",
-                "GithubKit"
+                "GithubKit",
+                "GithubUI",
+                "AuthenticationDomain",
+                "AuthenticationScenes"
             ],
             resources: [.process("Resources")]
         ),
         .testTarget(
             name: "AuthenticationLoginFeatureTests",
             dependencies: ["AuthenticationLoginFeature"]
-        ),
+        )
     ]
 )
