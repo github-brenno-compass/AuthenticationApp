@@ -10,7 +10,7 @@ import Factory
 
 public protocol AuthorizationTokenRemoteDataSource {
 
-    func refreshToken() async throws -> String
+    func generateToken(_ code: String) async throws -> String
 }
 
 extension Container {

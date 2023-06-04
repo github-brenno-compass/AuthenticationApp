@@ -7,6 +7,7 @@
 
 import Foundation
 import Factory
+import GithubKit
 
 public protocol DeleteAuthorizationTokenUseCaseProtocol {
 
@@ -26,6 +27,8 @@ extension DeleteAuthorizationTokenUseCase: DeleteAuthorizationTokenUseCaseProtoc
         try repository.deleteToken()
     }
 }
+
+extension DeleteAuthorizationTokenUseCase: GithubKit.DeleteAuthorizationTokenUseCaseProtocol {}
 
 extension Container {
 

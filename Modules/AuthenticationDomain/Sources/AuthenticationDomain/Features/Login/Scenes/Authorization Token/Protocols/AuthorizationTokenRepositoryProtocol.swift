@@ -14,7 +14,7 @@ public protocol AuthorizationTokenRepositoryProtocol {
 
     func getToken() throws -> String
 
-    func refreshToken() async throws
+    func generateToken(_ code: String) async throws
 }
 
 extension Container {

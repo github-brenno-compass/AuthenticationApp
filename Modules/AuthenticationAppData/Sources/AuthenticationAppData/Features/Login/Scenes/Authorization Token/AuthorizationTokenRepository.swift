@@ -27,12 +27,8 @@ extension AuthorizationTokenRepository: AuthorizationTokenRepositoryProtocol {
         try local.getToken()
     }
 
-    public func updateToken(_ token: String) throws {
-        try local.updateToken(token)
-    }
-
-    public func refreshToken() async throws {
-        let token = try await remote.refreshToken()
+    public func generateToken(_ code: String) async throws {
+        let token = try await remote.generateToken(code)
         try local.updateToken(token)
     }
 }
