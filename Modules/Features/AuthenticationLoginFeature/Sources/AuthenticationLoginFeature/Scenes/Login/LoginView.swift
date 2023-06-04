@@ -26,7 +26,7 @@ struct LoginView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Button("Pular") {
+                        Button(L10n.LoginView.skip) {
                             viewStore.send(.skip)
                         }
                         .foregroundColor(.white)
@@ -49,11 +49,11 @@ struct LoginView: View {
             }
 
             GithubFooter {
-                GithubButton("Entrar") {
+                GithubButton(L10n.LoginView.login) {
                     login()
                 }
 
-                GithubButton("Cadastrar") {
+                GithubButton(L10n.LoginView.signup) {
                     viewStore.send(.signup)
                 }
             }

@@ -10,6 +10,14 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  internal enum LoginView {
+    /// Entrar
+    internal static let login = L10n.tr("Localizable", "LoginView.login", fallback: "Entrar")
+    /// Cadastrar
+    internal static let signup = L10n.tr("Localizable", "LoginView.signup", fallback: "Cadastrar")
+    /// Pular
+    internal static let skip = L10n.tr("Localizable", "LoginView.skip", fallback: "Pular")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
