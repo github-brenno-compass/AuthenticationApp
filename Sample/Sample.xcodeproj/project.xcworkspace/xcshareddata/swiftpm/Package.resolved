@@ -21,7 +21,7 @@
     {
       "identity" : "factory",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hmlongco/Factory.git",
+      "location" : "https://github.com/hmlongco/Factory",
       "state" : {
         "revision" : "bf4e0ab7cfc45a921856d9ca196d834b7abf15a0",
         "version" : "2.1.5"
@@ -33,7 +33,7 @@
       "location" : "https://github.com/github-brenno-compass/GithubKit.git",
       "state" : {
         "branch" : "main",
-        "revision" : "84e9d79c528ccabf63b5174167fc8844fab8d5fe"
+        "revision" : "3bee10fba686e25bef76671845a4ac2b4249930a"
       }
     },
     {

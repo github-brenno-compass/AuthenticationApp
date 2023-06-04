@@ -28,7 +28,7 @@ extension DeleteAuthorizationTokenUseCase: DeleteAuthorizationTokenUseCaseProtoc
     }
 }
 
-extension DeleteAuthorizationTokenUseCase: GithubKit.DeleteAuthorizationTokenUseCaseProtocol {}
+extension DeleteAuthorizationTokenUseCase: GlobalDeleteAuthorizationTokenUseCaseProtocol {}
 
 extension Container {
 

@@ -14,15 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/brennobemoura/navigation-kit.git",
-            from: "1.0.0-alpha.4"
-        ),
-        .package(
-            url: "https://github.com/pointfreeco/swift-composable-architecture.git",
-            from: "0.54.0"
-        ),
-        .package(
+       .package(
             url: "https://github.com/hmlongco/Factory.git",
             from: "2.1.5"
         ),
@@ -36,8 +28,6 @@ let package = Package(
         .target(
             name: "AuthenticationAppData",
             dependencies: [
-                .product(name: "NavigationKit", package: "navigation-kit"),
-                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 "Factory",
                 "GithubKit",
                 "AuthenticationDomain"

@@ -28,7 +28,7 @@ extension GetAuthorizationTokenUseCase: GetAuthorizationTokenUseCaseProtocol {
     }
 }
 
-extension GetAuthorizationTokenUseCase: GithubKit.GetAuthorizationTokenUseCaseProtocol {}
+extension GetAuthorizationTokenUseCase: GlobalGetAuthorizationTokenUseCaseProtocol {}
 
 extension Container {
 

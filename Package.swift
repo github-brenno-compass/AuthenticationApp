@@ -3,6 +3,19 @@
 
 import PackageDescription
 
+let cores = [
+    "AuthenticationDomain",
+    "AuthenticationAppData",
+    "AuthenticationNetworking",
+    "AuthenticationStorage",
+    "AuthenticationScenes"
+]
+
+let features = [
+    "AuthenticationAlertsFeature",
+    "AuthenticationLoginFeature"
+]
+
 let package = Package(
     name: "AuthenticationApp",
     defaultLocalization: "pt_BR",
@@ -13,7 +26,11 @@ let package = Package(
             targets: ["AuthenticationApp"]
         )
     ],
-    dependencies: [
+    dependencies: cores.map {
+        .package(path: "Modules/\($0)")
+    } + features.map {
+        .package(path: "Modules/Features/\($0)")
+    } + [
         .package(
             url: "https://github.com/brennobemoura/navigation-kit.git",
             from: "1.0.0-alpha.4"
@@ -34,7 +51,11 @@ let package = Package(
     targets: [
         .target(
             name: "AuthenticationApp",
-            dependencies: [
+            dependencies: cores.map {
+                .product(name: $0, package: $0)
+            } + features.map {
+                .product(name: $0, package: $0)
+            } + [
                 .product(name: "NavigationKit", package: "navigation-kit"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 "Factory",

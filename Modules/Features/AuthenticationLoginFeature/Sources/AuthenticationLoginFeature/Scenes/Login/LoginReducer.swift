@@ -70,7 +70,7 @@ extension LoginReducer.State {
             return nil
         }
 
-        let constants = Container.shared.globalConstants.resolve()
+        let constants = Container.shared.globalConstants()
 
         return url.appendingPathComponent("?scope=user&client_id=\(constants.clientAPIToken)")
     }
