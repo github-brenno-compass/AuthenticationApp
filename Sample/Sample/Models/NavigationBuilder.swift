@@ -13,7 +13,7 @@ import AuthenticationApp
 
 struct NavigationBuilder: GithubKit.NavigationBuilder {
 
-    func callAsFunction<Content>(content: @escaping () -> Content) -> AnyView where Content : View {
+    func callAsFunction<Content>(content: @escaping () -> Content) -> AnyView where Content: View {
         AnyView(
             NKNavigationStack {
                 content()

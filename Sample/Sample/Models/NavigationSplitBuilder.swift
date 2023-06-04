@@ -15,7 +15,7 @@ struct NavigationSplitBuilder: GithubKit.NavigationSplitBuilder {
     func callAsFunction<Sidebar, Content>(
         sidebar: @escaping () -> Sidebar,
         content: @escaping () -> Content
-    ) -> AnyView where Sidebar : View, Content : View {
+    ) -> AnyView where Sidebar: View, Content: View {
         AnyView(NKNavigationSplitView(sidebar: sidebar, detail: content))
     }
 }

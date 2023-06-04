@@ -16,7 +16,7 @@ struct SampleApp: App {
     init() {
         Self.start()
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
