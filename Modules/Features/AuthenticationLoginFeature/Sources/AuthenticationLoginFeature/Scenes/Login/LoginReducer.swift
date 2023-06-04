@@ -66,13 +66,10 @@ struct LoginReducer: ReducerProtocol {
 extension LoginReducer.State {
 
     var loginURL: URL? {
-        guard let url = URL(string: "https://github.com/login/oauth/authorize") else {
-            return nil
-        }
-
         let constants = Container.shared.globalConstants()
 
-        return url.appendingPathComponent("?scope=user&client_id=\(constants.clientAPIToken)")
+        let urlAbsolutePath = "https://github.com/login/oauth/authorize"
+        return URL(string: urlAbsolutePath + "?scope=user&client_id=\(constants.clientAPIToken)")
     }
 }
 

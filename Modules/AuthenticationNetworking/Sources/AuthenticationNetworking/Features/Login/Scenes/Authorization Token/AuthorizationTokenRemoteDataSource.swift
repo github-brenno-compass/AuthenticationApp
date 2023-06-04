@@ -30,6 +30,7 @@ public struct AuthorizationTokenRemoteDataSource: AuthenticationAppData.Authoriz
                 code: code
             ))
         }
+        .logInConsole(true)
         .decode(OAuthResponse.self)
         .map(\.payload.accessToken)
         .result()

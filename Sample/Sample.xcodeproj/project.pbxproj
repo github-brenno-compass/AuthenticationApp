@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		798E1D4B2A2D10A7004D6707 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798E1D4A2A2D10A7004D6707 /* GlobalConstants.swift */; };
+		798E1D512A2D117B004D6707 /* github.com.pem in Resources */ = {isa = PBXBuildFile; fileRef = 798E1D502A2D117B004D6707 /* github.com.pem */; };
+		798E1D532A2D11AA004D6707 /* NavigationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798E1D522A2D11AA004D6707 /* NavigationBuilder.swift */; };
+		79C8F8222A2D129000CE4BCC /* NavigationSplitBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C8F8212A2D129000CE4BCC /* NavigationSplitBuilder.swift */; };
+		79C8F8252A2D12DC00CE4BCC /* AuthenticationApp in Frameworks */ = {isa = PBXBuildFile; productRef = 79C8F8242A2D12DC00CE4BCC /* AuthenticationApp */; };
 		79DB34712A2D0BA200DC5314 /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB34702A2D0BA200DC5314 /* SampleApp.swift */; };
 		79DB34732A2D0BA200DC5314 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB34722A2D0BA200DC5314 /* ContentView.swift */; };
 		79DB34752A2D0BA300DC5314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79DB34742A2D0BA300DC5314 /* Assets.xcassets */; };
@@ -20,21 +24,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		798E1D4A2A2D10A7004D6707 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalConstants.swift; path = ../../GlobalConstants.swift; sourceTree = "<group>"; };
+		798E1D4A2A2D10A7004D6707 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalConstants.swift; path = ../../../GlobalConstants.swift; sourceTree = "<group>"; };
 		798E1D4C2A2D10FC004D6707 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		798E1D502A2D117B004D6707 /* github.com.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = github.com.pem; sourceTree = "<group>"; };
+		798E1D522A2D11AA004D6707 /* NavigationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBuilder.swift; sourceTree = "<group>"; };
+		79C8F8212A2D129000CE4BCC /* NavigationSplitBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSplitBuilder.swift; sourceTree = "<group>"; };
+		79C8F8262A2D189B00CE4BCC /* Sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sample.entitlements; sourceTree = "<group>"; };
+		79C8F8272A2D18A800CE4BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		79DB346D2A2D0BA200DC5314 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DB34702A2D0BA200DC5314 /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
 		79DB34722A2D0BA200DC5314 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79DB34742A2D0BA300DC5314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79DB34772A2D0BA300DC5314 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79DB34822A2D0E4100DC5314 /* AuthenticationApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationApp; path = ..; sourceTree = "<group>"; };
-		79DB34842A2D0E5700DC5314 /* AuthenticationNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AuthenticationNetworking; sourceTree = "<group>"; };
-		79DB34852A2D0E5700DC5314 /* AuthenticationAppData */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AuthenticationAppData; sourceTree = "<group>"; };
-		79DB34862A2D0E5700DC5314 /* AuthenticationScenes */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AuthenticationScenes; sourceTree = "<group>"; };
-		79DB34872A2D0E5700DC5314 /* AuthenticationDomain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AuthenticationDomain; sourceTree = "<group>"; };
-		79DB34882A2D0E5700DC5314 /* AuthenticationStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AuthenticationStorage; sourceTree = "<group>"; };
-		79DB348A2A2D0E6B00DC5314 /* AuthenticationAlertsFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AuthenticationAlertsFeature; sourceTree = "<group>"; };
-		79DB348B2A2D0E6B00DC5314 /* AuthenticationLoginFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AuthenticationLoginFeature; sourceTree = "<group>"; };
+		79DB34842A2D0E5700DC5314 /* AuthenticationNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationNetworking; path = ../Modules/AuthenticationNetworking; sourceTree = "<group>"; };
+		79DB34852A2D0E5700DC5314 /* AuthenticationAppData */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationAppData; path = ../Modules/AuthenticationAppData; sourceTree = "<group>"; };
+		79DB34862A2D0E5700DC5314 /* AuthenticationScenes */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationScenes; path = ../Modules/AuthenticationScenes; sourceTree = "<group>"; };
+		79DB34872A2D0E5700DC5314 /* AuthenticationDomain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationDomain; path = ../Modules/AuthenticationDomain; sourceTree = "<group>"; };
+		79DB34882A2D0E5700DC5314 /* AuthenticationStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationStorage; path = ../Modules/AuthenticationStorage; sourceTree = "<group>"; };
+		79DB348A2A2D0E6B00DC5314 /* AuthenticationAlertsFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationAlertsFeature; path = ../Modules/Features/AuthenticationAlertsFeature; sourceTree = "<group>"; };
+		79DB348B2A2D0E6B00DC5314 /* AuthenticationLoginFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AuthenticationLoginFeature; path = ../Modules/Features/AuthenticationLoginFeature; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +53,7 @@
 			files = (
 				79DB34942A2D0F0C00DC5314 /* GithubKit in Frameworks */,
 				79DB34972A2D0F2600DC5314 /* GithubUI in Frameworks */,
+				79C8F8252A2D12DC00CE4BCC /* AuthenticationApp in Frameworks */,
 				79DB34802A2D0DF900DC5314 /* Factory in Frameworks */,
 				79DB348E2A2D0ECB00DC5314 /* NavigationKit in Frameworks */,
 				79DB34912A2D0EF900DC5314 /* ComposableArchitecture in Frameworks */,
@@ -53,6 +63,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		798E1D4D2A2D1152004D6707 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				798E1D502A2D117B004D6707 /* github.com.pem */,
+				79DB34742A2D0BA300DC5314 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		798E1D542A2D11C9004D6707 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				798E1D4A2A2D10A7004D6707 /* GlobalConstants.swift */,
+				798E1D522A2D11AA004D6707 /* NavigationBuilder.swift */,
+				79C8F8212A2D129000CE4BCC /* NavigationSplitBuilder.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		79C8F8232A2D12DC00CE4BCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		79DB34642A2D0BA200DC5314 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +97,7 @@
 				79DB34822A2D0E4100DC5314 /* AuthenticationApp */,
 				79DB346F2A2D0BA200DC5314 /* Sample */,
 				79DB346E2A2D0BA200DC5314 /* Products */,
+				79C8F8232A2D12DC00CE4BCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,10 +112,12 @@
 		79DB346F2A2D0BA200DC5314 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				798E1D4A2A2D10A7004D6707 /* GlobalConstants.swift */,
+				79C8F8272A2D18A800CE4BCC /* Info.plist */,
+				79C8F8262A2D189B00CE4BCC /* Sample.entitlements */,
+				798E1D542A2D11C9004D6707 /* Models */,
+				798E1D4D2A2D1152004D6707 /* Resources */,
 				79DB34702A2D0BA200DC5314 /* SampleApp.swift */,
 				79DB34722A2D0BA200DC5314 /* ContentView.swift */,
-				79DB34742A2D0BA300DC5314 /* Assets.xcassets */,
 				79DB34762A2D0BA300DC5314 /* Preview Content */,
 			);
 			path = Sample;
@@ -103,7 +142,6 @@
 				79DB34862A2D0E5700DC5314 /* AuthenticationScenes */,
 			);
 			name = Modules;
-			path = ../Modules;
 			sourceTree = "<group>";
 		};
 		79DB34892A2D0E6400DC5314 /* Features */ = {
@@ -112,7 +150,7 @@
 				79DB348A2A2D0E6B00DC5314 /* AuthenticationAlertsFeature */,
 				79DB348B2A2D0E6B00DC5314 /* AuthenticationLoginFeature */,
 			);
-			path = Features;
+			name = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +175,7 @@
 				79DB34902A2D0EF900DC5314 /* ComposableArchitecture */,
 				79DB34932A2D0F0C00DC5314 /* GithubKit */,
 				79DB34962A2D0F2600DC5314 /* GithubUI */,
+				79C8F8242A2D12DC00CE4BCC /* AuthenticationApp */,
 			);
 			productName = Sample;
 			productReference = 79DB346D2A2D0BA200DC5314 /* Sample.app */;
@@ -188,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79DB34782A2D0BA300DC5314 /* Preview Assets.xcassets in Resources */,
+				798E1D512A2D117B004D6707 /* github.com.pem in Resources */,
 				79DB34752A2D0BA300DC5314 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79C8F8222A2D129000CE4BCC /* NavigationSplitBuilder.swift in Sources */,
 				79DB34732A2D0BA200DC5314 /* ContentView.swift in Sources */,
+				798E1D532A2D11AA004D6707 /* NavigationBuilder.swift in Sources */,
 				798E1D4B2A2D10A7004D6707 /* GlobalConstants.swift in Sources */,
 				79DB34712A2D0BA200DC5314 /* SampleApp.swift in Sources */,
 			);
@@ -327,11 +369,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sample/Sample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -354,11 +398,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sample/Sample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -443,6 +489,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		79C8F8242A2D12DC00CE4BCC /* AuthenticationApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AuthenticationApp;
+		};
 		79DB347F2A2D0DF900DC5314 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 79DB347E2A2D0DF900DC5314 /* XCRemoteSwiftPackageReference "Factory" */;

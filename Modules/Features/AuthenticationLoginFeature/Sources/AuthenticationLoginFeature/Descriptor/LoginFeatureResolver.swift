@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Factory
 import AuthenticationScenes
 import NavigationKit
+import GithubKit
 
 public struct LoginFeatureResolver: FeatureResolver {
+
+    @Injected(\.navigationBuilder) var navigationBuilder
 
     private let scene: LoginFeatureScene
 
@@ -20,7 +24,9 @@ public struct LoginFeatureResolver: FeatureResolver {
     public var body: some View {
         switch scene {
         case .login(let scene):
-            LoginCoordinator(scene: scene)
+            navigationBuilder {
+                LoginCoordinator(scene)
+            }
         }
     }
 }

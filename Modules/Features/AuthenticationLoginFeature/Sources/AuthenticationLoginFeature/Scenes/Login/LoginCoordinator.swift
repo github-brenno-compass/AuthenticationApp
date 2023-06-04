@@ -19,6 +19,10 @@ struct LoginCoordinator: Coordinator {
 
     let scene: LoginScene
 
+    init(_ scene: LoginScene) {
+        self.scene = scene
+    }
+
     var body: some View {
         ObjectConnection(scene, \.store) {
             WithViewStore($0) { viewStore in
