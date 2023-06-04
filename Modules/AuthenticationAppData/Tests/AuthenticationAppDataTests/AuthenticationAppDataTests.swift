@@ -2,6 +2,7 @@ import XCTest
 @testable import AuthenticationAppData
 
 final class AuthenticationAppDataTests: XCTestCase {
+
     func testExample() throws {
         // XCTest Documenation
         // https://developer.apple.com/documentation/xctest

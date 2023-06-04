@@ -8,28 +8,28 @@
 import Foundation
 import Factory
 
-public protocol UpdateAuthorizationTokenUseCaseProtocol {
+public protocol RefreshAuthorizationTokenUseCaseProtocol {
 
-    func callAsFunction(_ token: String) throws
+    func callAsFunction() async throws
 }
 
-public struct UpdateAuthorizationTokenUseCase {
+public struct RefreshAuthorizationTokenUseCase {
 
     @Injected(\.authorizationTokenRepository) var repository
 
     public init() {}
 }
 
-extension UpdateAuthorizationTokenUseCase: UpdateAuthorizationTokenUseCaseProtocol {
+extension RefreshAuthorizationTokenUseCase: RefreshAuthorizationTokenUseCaseProtocol {
 
-    public func callAsFunction(_ token: String) throws {
-        try repository.updateToken(token)
+    public func callAsFunction() async throws {
+        try await repository.refreshToken()
     }
 }
 
 extension Container {
 
-    public var updateAuthorizationTokenUseCase: Factory<UpdateAuthorizationTokenUseCaseProtocol> {
-        self { UpdateAuthorizationTokenUseCase() }
+    public var refreshAuthorizationTokenUseCase: Factory<RefreshAuthorizationTokenUseCaseProtocol> {
+        self { RefreshAuthorizationTokenUseCase() }
     }
 }
