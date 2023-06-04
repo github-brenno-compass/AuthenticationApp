@@ -10,20 +10,6 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  internal enum BarButton {
-    /// Fechar
-    internal static let close = L10n.tr("Localizable", "BarButton.close", fallback: "Fechar")
-  }
-  internal enum PageListView {
-    /// Resultados
-    internal static let results = L10n.tr("Localizable", "PageListView.results", fallback: "Resultados")
-  }
-  internal enum RepositoryItem {
-    /// Privado
-    internal static let `private` = L10n.tr("Localizable", "RepositoryItem.private", fallback: "Privado")
-    /// Público
-    internal static let `public` = L10n.tr("Localizable", "RepositoryItem.public", fallback: "Público")
-  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

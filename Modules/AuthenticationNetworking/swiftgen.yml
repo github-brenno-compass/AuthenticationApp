@@ -1,5 +1,5 @@
-input_dir: Sources/GithubUI/Resources
-output_dir: Sources/GithubUI/
+input_dir: Sources/AuthenticationNetworking/Resources
+output_dir: Sources/AuthenticationNetworking/
 strings:
   inputs: pt_BR.lproj
   filter: .+\.strings$

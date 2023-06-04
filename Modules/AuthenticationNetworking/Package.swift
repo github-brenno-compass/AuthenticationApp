@@ -27,24 +27,33 @@ let package = Package(
             from: "2.1.5"
         ),
         .package(
+            url: "https://github.com/request-dl/request-dl.git",
+            from: "2.2.3"
+        ),
+        .package(
             url: "https://github.com/github-brenno-compass/GithubKit.git",
             branch: "main"
-        )
+        ),
+        .package(path: "../AuthenticationDomain"),
+        .package(path: "../AuthenticationAppData")
     ],
     targets: [
         .target(
-            name: "AuthenticationApp",
+            name: "AuthenticationNetworking",
             dependencies: [
                 .product(name: "NavigationKit", package: "navigation-kit"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 "Factory",
-                "GithubKit"
+                .product(name: "RequestDL", package: "request-dl"),
+                "GithubKit",
+                "AuthenticationDomain",
+                "AuthenticationAppData"
             ],
             resources: [.process("Resources")]
         ),
         .testTarget(
             name: "AuthenticationNetworkingTests",
             dependencies: ["AuthenticationNetworking"]
-        ),
+        )
     ]
 )
