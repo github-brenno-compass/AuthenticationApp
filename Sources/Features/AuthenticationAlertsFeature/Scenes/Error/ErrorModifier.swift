@@ -13,20 +13,29 @@ import Factory
 
 struct ErrorViewModifier: ViewModifier {
 
+    @Environment(\.sceneAction) var sceneAction
+
     @State var isPresenting: Bool = false
     @State var action: ErrorAction?
 
     func body(content: Content) -> some View {
         content
             .alert(
-                "Error",
+                title,
                 isPresented: $isPresenting,
                 presenting: action?.error,
-                actions: { _ in
-                    Button("Ok") {}
+                actions: { error in
+                    Button(L10n.ErrorViewModifier.ok) {
+                        if error.error is LogoutError {
+                            sceneAction(AuthenticationAppAction.logout(.init()))
+                        }
+                    }
                 },
                 message: {
-                    Text($0.error.localizedDescription)
+                    if let localized = $0.error as? LocalizedError,
+                       let description = localized.errorDescription {
+                        Text(description)
+                    }
                 }
             )
             .sceneAction(for: ErrorAction.self) {
@@ -42,5 +51,16 @@ struct ErrorViewModifier: ViewModifier {
                     isPresenting = true
                 }
             }
+    }
+}
+
+extension ErrorViewModifier {
+
+    var title: String {
+        if action?.error.error is LogoutError {
+            return L10n.ErrorViewModifier.Logout.title
+        }
+
+        return L10n.ErrorViewModifier.Default.title
     }
 }

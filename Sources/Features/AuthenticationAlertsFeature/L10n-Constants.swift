@@ -10,6 +10,18 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  internal enum ErrorViewModifier {
+    /// Ok
+    internal static let ok = L10n.tr("Localizable", "ErrorViewModifier.ok", fallback: "Ok")
+    internal enum Default {
+      /// Algo inesperado ocorreu
+      internal static let title = L10n.tr("Localizable", "ErrorViewModifier.Default.title", fallback: "Algo inesperado ocorreu")
+    }
+    internal enum Logout {
+      /// Sessão expirada
+      internal static let title = L10n.tr("Localizable", "ErrorViewModifier.Logout.title", fallback: "Sessão expirada")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
@@ -33,4 +45,4 @@ private final class BundleToken {
     #endif
   }()
 }
-//   swiftlint:enable convenience_type all
+// swiftlint:enable convenience_type all

@@ -19,5 +19,13 @@ public struct AuthenticationAppActions: MiniAppActions {
         content
             .modifier(AlertsFeatureActions())
             .modifier(LoginFeatureActions())
+            .sceneActionTransformer(for: AuthenticationAppAction.self) {
+                switch $1 {
+                case .error(let error):
+                    $0(error)
+                default:
+                    break
+                }
+            }
     }
 }
