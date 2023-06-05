@@ -1,0 +1,47 @@
+strings:
+  - inputs: Sources/AuthenticationApp/Resources/pt_BR.lproj
+    outputs:
+        templateName: structured-swift5
+        output: Sources/AuthenticationApp/L10n-Constants.swift
+
+  - inputs: Sources/AuthenticationDomain/Resources/pt_BR.lproj
+    filter: .+\.strings$
+    outputs:
+        templateName: structured-swift5
+        output: Sources/AuthenticationDomain/L10n-Constants.swift
+
+  - inputs: Sources/AuthenticationAppData/Resources/pt_BR.lproj
+    filter: .+\.strings$
+    outputs:
+        templateName: structured-swift5
+        output: Sources/AuthenticationAppData/L10n-Constants.swift
+
+  - inputs: Sources/AuthenticationNetworking/Resources/pt_BR.lproj
+    filter: .+\.strings$
+    outputs:
+        templateName: structured-swift5
+        output: Sources/AuthenticationNetworking/L10n-Constants.swift
+
+  - inputs: Sources/AuthenticationStorage/Resources/pt_BR.lproj
+    filter: .+\.strings$
+    outputs:
+        templateName: structured-swift5
+        output: Sources/AuthenticationStorage/L10n-Constants.swift
+
+  - inputs: Sources/AuthenticationScenes/Resources/pt_BR.lproj
+    filter: .+\.strings$
+    outputs:
+        templateName: structured-swift5
+        output: Sources/AuthenticationScenes/L10n-Constants.swift
+
+  - inputs: Sources/Features/AuthenticationAlertsFeature/Resources/pt_BR.lproj
+    filter: .+\.strings$
+    outputs:
+        templateName: structured-swift5
+        output: Sources/Features/AuthenticationAlertsFeature/L10n-Constants.swift
+
+  - inputs: Sources/Features/AuthenticationLoginFeature/Resources/pt_BR.lproj
+    filter: .+\.strings$
+    outputs:
+        templateName: structured-swift5
+        output: Sources/Features/AuthenticationLoginFeature/L10n-Constants.swift
