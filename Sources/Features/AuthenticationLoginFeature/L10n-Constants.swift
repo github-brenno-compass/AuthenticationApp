@@ -15,8 +15,6 @@ internal enum L10n {
     internal static let login = L10n.tr("Localizable", "LoginView.login", fallback: "Entrar")
     /// Cadastrar
     internal static let signup = L10n.tr("Localizable", "LoginView.signup", fallback: "Cadastrar")
-    /// Pular
-    internal static let skip = L10n.tr("Localizable", "LoginView.skip", fallback: "Pular")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
@@ -41,4 +39,4 @@ private final class BundleToken {
     #endif
   }()
 }
-// swiftlint:enable convenience_type all
+//   swiftlint:enable convenience_type all

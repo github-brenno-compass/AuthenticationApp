@@ -156,17 +156,17 @@ let package = Package(
         ),
 
         // MARK: - Core Tests
-    
+
         .testTarget(
             name: "AuthenticationDomainTests",
             dependencies: ["AuthenticationDomain"]
         ),
-    
+
         .testTarget(
             name: "AuthenticationAppDataTests",
             dependencies: ["AuthenticationAppData"]
         ),
-    
+
         .testTarget(
             name: "AuthenticationStorageTests",
             dependencies: ["AuthenticationStorage"]
