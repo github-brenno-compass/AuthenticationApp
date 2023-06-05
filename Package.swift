@@ -152,48 +152,17 @@ let package = Package(
 
         .testTarget(
             name: "AuthenticationAppTests",
-            dependencies: ["AuthenticationApp"]
-        ),
-
-        // MARK: - Core Tests
-
-        .testTarget(
-            name: "AuthenticationDomainTests",
-            dependencies: ["AuthenticationDomain"]
-        ),
-
-        .testTarget(
-            name: "AuthenticationAppDataTests",
-            dependencies: ["AuthenticationAppData"]
-        ),
-
-        .testTarget(
-            name: "AuthenticationStorageTests",
-            dependencies: ["AuthenticationStorage"]
-        ),
-
-        .testTarget(
-            name: "AuthenticationNetworkingTests",
-            dependencies: ["AuthenticationNetworking"]
-        ),
-
-        .testTarget(
-            name: "AuthenticationScenesTests",
-            dependencies: ["AuthenticationScenes"]
-        ),
-
-        // MARK: - Features Tests
-
-        .testTarget(
-            name: "AuthenticationAlertsFeatureTests",
-            dependencies: ["AuthenticationAlertsFeature"],
-            path: "Tests/Features/AuthenticationAlertsFeatureTests"
-        ),
-
-        .testTarget(
-            name: "AuthenticationLoginFeatureTests",
-            dependencies: ["AuthenticationLoginFeature"],
-            path: "Tests/Features/AuthenticationLoginFeatureTests"
+            dependencies: [
+                "AuthenticationApp",
+                "AuthenticationDomain",
+                "AuthenticationAppData",
+                "AuthenticationStorage",
+                "AuthenticationNetworking",
+                "AuthenticationScenes",
+                "AuthenticationAlertsFeature",
+                "AuthenticationLoginFeature",
+                "Factory"
+            ]
         )
     ]
 )
