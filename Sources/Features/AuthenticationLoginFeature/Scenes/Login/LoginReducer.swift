@@ -31,7 +31,7 @@ struct LoginReducer: ReducerProtocol {
         case login(String)
 
         case error(Error)
-        case skip
+        case authenticated
         case signup
     }
 
@@ -52,7 +52,7 @@ struct LoginReducer: ReducerProtocol {
                 return authenticateUser(code: code)
             case .error(let error):
                 state.transaction(.error(error))
-            case .skip:
+            case .authenticated:
                 state.transaction(.home)
             case .signup:
                 state.transaction(.signup)
@@ -81,7 +81,7 @@ extension LoginReducer {
 
             do {
                 try await generateAuthorizationTokenUseCase(code)
-                await send(.skip)
+                await send(.authenticated)
             } catch {
                 await send(.error(error))
             }

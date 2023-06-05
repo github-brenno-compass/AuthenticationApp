@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/brennobemoura/navigation-kit.git",
       "state" : {
-        "revision" : "5cd4457f55d213fce979878631d489870c7f7e1e",
-        "version" : "1.0.0-alpha.4"
+        "revision" : "5b93ec89f36dc0e75a9426bc9705507f7384a67b",
+        "version" : "1.0.0-alpha.5"
       }
     },
     {

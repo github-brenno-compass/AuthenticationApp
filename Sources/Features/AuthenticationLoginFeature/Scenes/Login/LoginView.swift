@@ -23,23 +23,13 @@ struct LoginView: View {
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 1)
 
-                VStack {
-                    HStack {
-                        Spacer()
-                        Button(L10n.LoginView.skip) {
-                            viewStore.send(.skip)
-                        }
-                        .foregroundColor(.white)
-                    }
-
-                    titleStylized
-                        .frame(
-                            maxWidth: .infinity,
-                            maxHeight: .infinity
-                        )
-                }
-                .padding([.top, .horizontal], 16)
-                .environment(\.colorScheme, .light)
+                titleStylized
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity
+                    )
+                    .padding([.top, .horizontal], 16)
+                    .environment(\.colorScheme, .light)
             }
             .background {
                 Image("globe", bundle: .module)

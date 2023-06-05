@@ -3,19 +3,6 @@
 
 import PackageDescription
 
-let cores = [
-    "AuthenticationDomain",
-    "AuthenticationAppData",
-    "AuthenticationNetworking",
-    "AuthenticationStorage",
-    "AuthenticationScenes"
-]
-
-let features = [
-    "AuthenticationAlertsFeature",
-    "AuthenticationLoginFeature"
-]
-
 let package = Package(
     name: "AuthenticationApp",
     defaultLocalization: "pt_BR",
@@ -26,14 +13,10 @@ let package = Package(
             targets: ["AuthenticationApp"]
         )
     ],
-    dependencies: cores.map {
-        .package(path: "Modules/\($0)")
-    } + features.map {
-        .package(path: "Modules/Features/\($0)")
-    } + [
+    dependencies: [
         .package(
             url: "https://github.com/brennobemoura/navigation-kit.git",
-            from: "1.0.0-alpha.4"
+            from: "1.0.0-alpha.5"
         ),
         .package(
             url: "https://github.com/pointfreeco/swift-composable-architecture.git",
@@ -44,28 +27,173 @@ let package = Package(
             from: "2.1.5"
         ),
         .package(
+            url: "https://github.com/request-dl/request-dl.git",
+            from: "2.2.3"
+        ),
+        .package(
+            url: "https://github.com/auth0/SimpleKeychain.git",
+            from: "1.0.1"
+        ),
+        .package(
+            url: "https://github.com/github-brenno-compass/GithubUI.git",
+            branch: "main"
+        ),
+        .package(
             url: "https://github.com/github-brenno-compass/GithubKit.git",
             branch: "main"
         )
     ],
     targets: [
+        // MARK: - App
+
         .target(
             name: "AuthenticationApp",
-            dependencies: cores.map {
-                .product(name: $0, package: $0)
-            } + features.map {
-                .product(name: $0, package: $0)
-            } + [
+            dependencies: [
                 .product(name: "NavigationKit", package: "navigation-kit"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                "Factory",
+                "GithubKit",
+                "AuthenticationDomain",
+                "AuthenticationAppData",
+                "AuthenticationNetworking",
+                "AuthenticationStorage",
+                "AuthenticationScenes",
+                "AuthenticationAlertsFeature",
+                "AuthenticationLoginFeature"
+            ],
+            resources: [.process("Resources")]
+        ),
+
+        // MARK: - Core
+
+        .target(
+            name: "AuthenticationDomain",
+            dependencies: [
                 "Factory",
                 "GithubKit"
             ],
             resources: [.process("Resources")]
         ),
+
+        .target(
+            name: "AuthenticationAppData",
+            dependencies: [
+                "Factory",
+                "GithubKit",
+                "AuthenticationDomain"
+            ],
+            resources: [.process("Resources")]
+        ),
+
+        .target(
+            name: "AuthenticationNetworking",
+            dependencies: [
+                "Factory",
+                "GithubKit",
+                "AuthenticationDomain",
+                "AuthenticationAppData",
+                .product(name: "RequestDL", package: "request-dl")
+            ],
+            resources: [.process("Resources")]
+        ),
+
+        .target(
+            name: "AuthenticationStorage",
+            dependencies: [
+                "Factory",
+                "GithubKit",
+                "AuthenticationDomain",
+                "AuthenticationAppData",
+                "SimpleKeychain"
+            ],
+            resources: [.process("Resources")]
+        ),
+
+        .target(
+            name: "AuthenticationScenes",
+            dependencies: [
+                "Factory",
+                "GithubKit",
+                "GithubUI",
+                "AuthenticationDomain"
+            ],
+            resources: [.process("Resources")]
+        ),
+
+        // MARK: - Features
+
+        .target(
+            name: "AuthenticationAlertsFeature",
+            dependencies: [
+                "Factory",
+                "GithubKit",
+                "GithubUI",
+                "AuthenticationDomain",
+                "AuthenticationScenes"
+            ],
+            path: "Sources/Features/AuthenticationAlertsFeature",
+            resources: [.process("Resources")]
+        ),
+
+        .target(
+            name: "AuthenticationLoginFeature",
+            dependencies: [
+                "Factory",
+                "GithubKit",
+                "GithubUI",
+                "AuthenticationDomain",
+                "AuthenticationScenes"
+            ],
+            path: "Sources/Features/AuthenticationLoginFeature",
+            resources: [.process("Resources")]
+        ),
+
+        // MARK: - App Tests
+
         .testTarget(
             name: "AuthenticationAppTests",
             dependencies: ["AuthenticationApp"]
+        ),
+
+        // MARK: - Core Tests
+    
+        .testTarget(
+            name: "AuthenticationDomainTests",
+            dependencies: ["AuthenticationDomain"]
+        ),
+    
+        .testTarget(
+            name: "AuthenticationAppDataTests",
+            dependencies: ["AuthenticationAppData"]
+        ),
+    
+        .testTarget(
+            name: "AuthenticationStorageTests",
+            dependencies: ["AuthenticationStorage"]
+        ),
+
+        .testTarget(
+            name: "AuthenticationNetworkingTests",
+            dependencies: ["AuthenticationNetworking"]
+        ),
+
+        .testTarget(
+            name: "AuthenticationScenesTests",
+            dependencies: ["AuthenticationScenes"]
+        ),
+
+        // MARK: - Features Tests
+
+        .testTarget(
+            name: "AuthenticationAlertsFeatureTests",
+            dependencies: ["AuthenticationAlertsFeature"],
+            path: "Tests/Features/AuthenticationAlertsFeatureTests"
+        ),
+
+        .testTarget(
+            name: "AuthenticationLoginFeatureTests",
+            dependencies: ["AuthenticationLoginFeature"],
+            path: "Tests/Features/AuthenticationLoginFeatureTests"
         )
     ]
 )
