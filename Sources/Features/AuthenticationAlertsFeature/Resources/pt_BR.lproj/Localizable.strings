@@ -1,1 +1,4 @@
-"" = "";
+"ErrorViewModifier.Logout.title" = "Sessão expirada";
+"ErrorViewModifier.Default.title" = "Algo inesperado ocorreu";
+
+"ErrorViewModifier.ok" = "Ok";
